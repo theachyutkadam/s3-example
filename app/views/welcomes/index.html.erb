@@ -1,6 +1,6 @@
 <%= link_to "New post", new_post_path %>
 
-<h1>Download bucket</h1>
+<!-- <h1>Download bucket</h1>
 <%= form_with scope: "welcomes", url: download_path, method: :get do |form| %>
 	<%= form.label :bucket_name, "Select Bucket:" %>
   <%= form.text_field :bucket_name %><br><br>
@@ -8,13 +8,17 @@
   <%= form.text_field :files %><br><br>
   <%= form.submit "Download" %>
 <% end %>
-<br><br><br>
+<br><br><br> -->
 
-<h1>Copy bucket</h1>
+<h1>Transfer buckets files</h1>
 <%= form_with scope: "welcomes", url: send_data_into_another_bucket_path, method: :get do |form| %>
-	<%= form.label :first_bucket, "Select First Bucket:" %>
+  <%= form.label :first_bucket, "Select Source Bucket:" %>
   <%= form.text_field :first_bucket %><br><br>
-	<%= form.label :second_bucket, "Select Second Bucket:" %>
+
+  <%= form.label :first_bucket, "Select Source Bucket Files:" %>
+  <%= form.text_field :first_bucket %><br><br>
+
+  <%= form.label :second_bucket, "Select Destination Bucket:" %>
   <%= form.text_field :second_bucket %><br><br>
   <%= form.submit "Paste" %>
 <% end %>
